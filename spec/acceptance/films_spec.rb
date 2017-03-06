@@ -8,6 +8,10 @@ resource "Films" do
       explanation "Retrieves an index of films"
       do_request
       expect(status).to eq 200
+
+      json = JSON.parse(response.body)
+      json_films = json["data"]
+      expect(json_films.length).to eq(Film.count)
     end
   end
 
