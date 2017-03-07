@@ -2,8 +2,6 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 require 'acceptance_helper'
 
-require 'byebug'
-
 resource "Films" do
   get "/api/films" do
     example "Film Index" do

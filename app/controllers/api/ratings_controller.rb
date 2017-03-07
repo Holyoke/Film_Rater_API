@@ -3,9 +3,8 @@ class Api::RatingsController < ApplicationController
 
   def create
     rating = @film.ratings.new(rating_params)
-
     if rating.save
-      render json: rating
+      render json: rating, status: :created
     else
       render json: rating.errors.full_messages, status: :unprocessable_entity
     end
@@ -13,7 +12,7 @@ class Api::RatingsController < ApplicationController
 
   private
     def set_film
-      @film = params[:film_id]
+      @film = Film.find(params[:film_id])
     end
 
     def rating_params
