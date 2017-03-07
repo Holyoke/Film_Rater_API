@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Films API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Films API</h1>
+
+      <div class="article">
+        <h2>Film Index</h2>
+        <h3>GET /api/films</h3>
+          <p class="explanation">
+            Retrieves an index of films
+          </p>
+
+
+
+          <h3>Request</h3>
+
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /api/films</pre>
+
+
+
+
+            <h3>Response</h3>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;1&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;A Wonderful Film&quot;,
+        &quot;description&quot;: &quot;A cute film about lots of wonderful stuff.&quot;,
+        &quot;url-slug&quot;: &quot;a_wonderful_film&quot;,
+        &quot;year&quot;: 1973
+      }
+    },
+    {
+      &quot;id&quot;: &quot;2&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;All About Fandor&quot;,
+        &quot;description&quot;: &quot;Documentary telling the tail of Fandor.&quot;,
+        &quot;url-slug&quot;: &quot;all_about_fandor&quot;,
+        &quot;year&quot;: 2001
+      }
+    },
+    {
+      &quot;id&quot;: &quot;3&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;Dancing with Elephants&quot;,
+        &quot;description&quot;: &quot;The classic tale of Dancing with Wolves, but with elephants!&quot;,
+        &quot;url-slug&quot;: &quot;dancing_with_elephants&quot;,
+        &quot;year&quot;: 2016
+      }
+    },
+    {
+      &quot;id&quot;: &quot;4&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;The Story of George&quot;,
+        &quot;description&quot;: &quot;A true story outlining the adventures of George&quot;,
+        &quot;url-slug&quot;: &quot;the_story_of_george&quot;,
+        &quot;year&quot;: 1974
+      }
+    },
+    {
+      &quot;id&quot;: &quot;5&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;Zee and Bee Go Skiiing&quot;,
+        &quot;description&quot;: &quot;The tragic story of Zee and Bee on their snowy adventures.&quot;,
+        &quot;url-slug&quot;: &quot;zee_and_bee_go_skiing&quot;,
+        &quot;year&quot;: 1991
+      }
+    },
+    {
+      &quot;id&quot;: &quot;6&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;Ahead of Its Time&quot;,
+        &quot;description&quot;: &quot;A story about the future.&quot;,
+        &quot;url-slug&quot;: &quot;ahead_of_its_time&quot;,
+        &quot;year&quot;: 2088
+      }
+    },
+    {
+      &quot;id&quot;: &quot;7&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;My Name is Jerry&quot;,
+        &quot;description&quot;: &quot;The life of the cat named Jerry.&quot;,
+        &quot;url-slug&quot;: &quot;my_name_is_jerry&quot;,
+        &quot;year&quot;: 1989
+      }
+    },
+    {
+      &quot;id&quot;: &quot;8&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;Gems and Trestle&quot;,
+        &quot;description&quot;: &quot;Is it about web development? Mining history? You&#39;ll never know.&quot;,
+        &quot;url-slug&quot;: &quot;gems_and_trestle&quot;,
+        &quot;year&quot;: 2011
+      }
+    },
+    {
+      &quot;id&quot;: &quot;9&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;How To React Natively&quot;,
+        &quot;description&quot;: &quot;A step by step journey through developing a React Native application.&quot;,
+        &quot;url-slug&quot;: &quot;how_to_react_natively&quot;,
+        &quot;year&quot;: 2000
+      }
+    },
+    {
+      &quot;id&quot;: &quot;10&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;title&quot;: &quot;Perry Hotter: A Lizard&#39;s Tale&quot;,
+        &quot;description&quot;: &quot;It&#39;s a story all about a lizard named Perry.&quot;,
+        &quot;url-slug&quot;: &quot;perry_hotter_a_lizards_tale&quot;,
+        &quot;year&quot;: 2017
+      }
+    }
+  ]
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

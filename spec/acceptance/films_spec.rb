@@ -6,7 +6,7 @@ require 'byebug'
 
 resource "Films" do
   get "/api/films" do
-    example "Listing films" do
+    example "Film Index" do
       explanation "Retrieves an index of films"
       do_request
       expect(status).to eq 200
@@ -18,7 +18,7 @@ resource "Films" do
   end
 
   get "/api/films/1" do
-    example "Listing films" do
+    example "Film Show" do
       explanation "Retrieves a specific film"
       do_request
       expect(status).to eq 200
