@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Films API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Films API</h1>
+
+      <div class="article">
+        <h2>Filtering attributes on a list of films</h2>
+        <h3>GET /api/films/</h3>
+          <p class="explanation">
+            Filtering film resources' attributes by passing in an array of attributes. 
+ All attributes are returned by default. Note that params are passed in as an array.
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">fields[][year]</span>
+                </td>
+                <td>
+                  <span class="description">year of film</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">fields[][title]</span>
+                </td>
+                <td>
+                  <span class="description">title of film</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">fields[][description]</span>
+                </td>
+                <td>
+                  <span class="description">description of film</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">fields[][url_slug]</span>
+                </td>
+                <td>
+                  <span class="description">url_slug of film</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">fields[][average_rating]</span>
+                </td>
+                <td>
+                  <span class="description">average_rating of film</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/json
+Content-Type: application/json</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /api/films/</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">fields: [&quot;url_slug&quot;, &quot;average_rating&quot;]</pre>
+
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;localhost:3000/api/films/&quot; -X GET \
+	-H &quot;Accept: application/json&quot; \
+	-H &quot;Content-Type: application/json&quot;</pre>
+
+            <h3>Response</h3>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: &quot;1&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;a_wonderful_film&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;2&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;all_about_fandor&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;3&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;dancing_with_elephants&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;4&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;the_story_of_george&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;5&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;zee_and_bee_go_skiing&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;6&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;ahead_of_its_time&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;7&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;my_name_is_jerry&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;8&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;gems_and_trestle&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;9&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;how_to_react_natively&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    },
+    {
+      &quot;id&quot;: &quot;10&quot;,
+      &quot;type&quot;: &quot;films&quot;,
+      &quot;attributes&quot;: {
+        &quot;url-slug&quot;: &quot;perry_hotter_a_lizards_tale&quot;,
+        &quot;average-rating&quot;: 0.0
+      }
+    }
+  ]
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Filtering attributes
+https://github.com/rails-api/active_model_serializers/issues/1085
+http://stackoverflow.com/questions/32487213/how-can-i-make-an-activemodelserializer-attribute-optional-at-runtime
