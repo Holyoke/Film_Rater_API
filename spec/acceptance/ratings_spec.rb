@@ -2,8 +2,6 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 require 'acceptance_helper'
 
-require 'byebug'
-
 resource "Ratings" do
   header "Accept", "application/json"
   header "Content-Type", "application/json"
