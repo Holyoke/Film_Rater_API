@@ -3,9 +3,12 @@ require 'rspec_api_documentation/dsl'
 require 'acceptance_helper'
 
 resource "Films" do
+  header "Accept", "application/json"
+  header "Content-Type", "application/json"
+
   get "/api/films" do
-    example "Film Index" do
-      explanation "Retrieves an index of films"
+    example "Retrieving a list of films" do
+      explanation "Film#Index"
       do_request
       expect(status).to eq 200
 
@@ -16,8 +19,8 @@ resource "Films" do
   end
 
   get "/api/films/1" do
-    example "Film Show" do
-      explanation "Retrieves a specific film"
+    example "Fetching a specific film" do
+      explanation "Film#Show"
       do_request
       expect(status).to eq 200
 

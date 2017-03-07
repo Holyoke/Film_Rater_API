@@ -109,22 +109,29 @@ table th, table td {
       <h1>Films API</h1>
 
       <div class="article">
-        <h2>Film Show</h2>
+        <h2>Fetching a specific film</h2>
         <h3>GET /api/films/1</h3>
           <p class="explanation">
-            Retrieves a specific film
+            Film#Show
           </p>
 
 
 
           <h3>Request</h3>
 
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/json
+Content-Type: application/json</pre>
 
           <h4>Route</h4>
           <pre class="request route highlight">GET /api/films/1</pre>
 
 
 
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;localhost:3000/api/films/1&quot; -X GET \
+	-H &quot;Accept: application/json&quot; \
+	-H &quot;Content-Type: application/json&quot;</pre>
 
             <h3>Response</h3>
             <h4>Status</h4>
@@ -138,7 +145,8 @@ table th, table td {
       &quot;title&quot;: &quot;A Wonderful Film&quot;,
       &quot;description&quot;: &quot;A cute film about lots of wonderful stuff.&quot;,
       &quot;url-slug&quot;: &quot;a_wonderful_film&quot;,
-      &quot;year&quot;: 1973
+      &quot;year&quot;: 1973,
+      &quot;average-rating&quot;: 0.0
     }
   }
 }</pre>

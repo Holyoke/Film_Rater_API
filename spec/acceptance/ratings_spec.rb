@@ -14,8 +14,8 @@ resource "Ratings" do
     let(:score) { 75 }
     let(:raw_post) { params.to_json }
 
-    example "Rating, Create" do
-      explanation "Creating a rating for a film"
+    example "Submitting a rating to a film" do
+      explanation "Rating#Create"
       do_request
       expect(status).to eq 201
     end

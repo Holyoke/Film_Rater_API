@@ -109,22 +109,29 @@ table th, table td {
       <h1>Films API</h1>
 
       <div class="article">
-        <h2>Film Index</h2>
+        <h2>Retrieving a list of films</h2>
         <h3>GET /api/films</h3>
           <p class="explanation">
-            Retrieves an index of films
+            Film#Index
           </p>
 
 
 
           <h3>Request</h3>
 
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/json
+Content-Type: application/json</pre>
 
           <h4>Route</h4>
           <pre class="request route highlight">GET /api/films</pre>
 
 
 
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;localhost:3000/api/films&quot; -X GET \
+	-H &quot;Accept: application/json&quot; \
+	-H &quot;Content-Type: application/json&quot;</pre>
 
             <h3>Response</h3>
             <h4>Status</h4>
@@ -139,7 +146,8 @@ table th, table td {
         &quot;title&quot;: &quot;A Wonderful Film&quot;,
         &quot;description&quot;: &quot;A cute film about lots of wonderful stuff.&quot;,
         &quot;url-slug&quot;: &quot;a_wonderful_film&quot;,
-        &quot;year&quot;: 1973
+        &quot;year&quot;: 1973,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -149,7 +157,8 @@ table th, table td {
         &quot;title&quot;: &quot;All About Fandor&quot;,
         &quot;description&quot;: &quot;Documentary telling the tail of Fandor.&quot;,
         &quot;url-slug&quot;: &quot;all_about_fandor&quot;,
-        &quot;year&quot;: 2001
+        &quot;year&quot;: 2001,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -159,7 +168,8 @@ table th, table td {
         &quot;title&quot;: &quot;Dancing with Elephants&quot;,
         &quot;description&quot;: &quot;The classic tale of Dancing with Wolves, but with elephants!&quot;,
         &quot;url-slug&quot;: &quot;dancing_with_elephants&quot;,
-        &quot;year&quot;: 2016
+        &quot;year&quot;: 2016,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -169,7 +179,8 @@ table th, table td {
         &quot;title&quot;: &quot;The Story of George&quot;,
         &quot;description&quot;: &quot;A true story outlining the adventures of George&quot;,
         &quot;url-slug&quot;: &quot;the_story_of_george&quot;,
-        &quot;year&quot;: 1974
+        &quot;year&quot;: 1974,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -179,7 +190,8 @@ table th, table td {
         &quot;title&quot;: &quot;Zee and Bee Go Skiiing&quot;,
         &quot;description&quot;: &quot;The tragic story of Zee and Bee on their snowy adventures.&quot;,
         &quot;url-slug&quot;: &quot;zee_and_bee_go_skiing&quot;,
-        &quot;year&quot;: 1991
+        &quot;year&quot;: 1991,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -189,7 +201,8 @@ table th, table td {
         &quot;title&quot;: &quot;Ahead of Its Time&quot;,
         &quot;description&quot;: &quot;A story about the future.&quot;,
         &quot;url-slug&quot;: &quot;ahead_of_its_time&quot;,
-        &quot;year&quot;: 2088
+        &quot;year&quot;: 2088,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -199,7 +212,8 @@ table th, table td {
         &quot;title&quot;: &quot;My Name is Jerry&quot;,
         &quot;description&quot;: &quot;The life of the cat named Jerry.&quot;,
         &quot;url-slug&quot;: &quot;my_name_is_jerry&quot;,
-        &quot;year&quot;: 1989
+        &quot;year&quot;: 1989,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -209,7 +223,8 @@ table th, table td {
         &quot;title&quot;: &quot;Gems and Trestle&quot;,
         &quot;description&quot;: &quot;Is it about web development? Mining history? You&#39;ll never know.&quot;,
         &quot;url-slug&quot;: &quot;gems_and_trestle&quot;,
-        &quot;year&quot;: 2011
+        &quot;year&quot;: 2011,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -219,7 +234,8 @@ table th, table td {
         &quot;title&quot;: &quot;How To React Natively&quot;,
         &quot;description&quot;: &quot;A step by step journey through developing a React Native application.&quot;,
         &quot;url-slug&quot;: &quot;how_to_react_natively&quot;,
-        &quot;year&quot;: 2000
+        &quot;year&quot;: 2000,
+        &quot;average-rating&quot;: 0.0
       }
     },
     {
@@ -229,7 +245,8 @@ table th, table td {
         &quot;title&quot;: &quot;Perry Hotter: A Lizard&#39;s Tale&quot;,
         &quot;description&quot;: &quot;It&#39;s a story all about a lizard named Perry.&quot;,
         &quot;url-slug&quot;: &quot;perry_hotter_a_lizards_tale&quot;,
-        &quot;year&quot;: 2017
+        &quot;year&quot;: 2017,
+        &quot;average-rating&quot;: 0.0
       }
     }
   ]
