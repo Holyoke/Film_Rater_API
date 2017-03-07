@@ -1,4 +1,5 @@
-# Film Rater API Projct
+# Film Rater API Project
+![](https://zippy.gfycat.com/MasculineImpressiveHippopotamus.gif)
 
 This Rails 5 project allows users to retrieve film data and submit film ratings via RESTful JSON points. Please review the `api documentation` at `api/docs` for more detailed information on interacting with the server. It's primary purpose is to demonstrate a user submitting ratings to a film.
 
