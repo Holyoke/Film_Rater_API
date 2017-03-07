@@ -49,7 +49,7 @@ resource "Films" do
     let(:raw_post) { {fields: [:year, :title]} }
     let(:id) { Film.first.id }
 
-    example "Filtering attributes on fetched film" do
+    example "Filtering attributes retrieving a film" do
       explanation "Filtering film resources' attributes by passing in an array of attributes. \n All attributes are returned by default. Note that params are passed in as an array."
       do_request
       expect(status).to eq 200
